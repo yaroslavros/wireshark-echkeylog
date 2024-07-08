@@ -1,3 +1,17 @@
+ECH SSLKEYLOG version
+-------------------
+This version of wireshark adds support of ECH decryption through [SSLKEYLOGFILE extension](https://datatracker.ietf.org/doc/draft-rosomakho-tls-ech-keylogfile/).
+It can decrypt ECH extension from ClientHello, check if server accepted it by computing acceptance bytes and update rest of TLS decryption process accordingly.
+
+Sample PCAPs with corresponding keylog are available at https://github.com/yaroslavros/ech-keylog-pcaps
+There are custom versions of [BoringSSL](https://github.com/yaroslavros/boringssl-echkeylog) and [NSS](https://github.com/yaroslavros/nss-echkeylog) that can generate required additional entries into SSLKEYLOGFILE.
+
+![unnamed](https://github.com/yaroslavros/wireshark-echkeylog/assets/27410961/7fae5fea-c2dc-4f1e-9e9d-21f9a1113b41)
+![unnamed](https://github.com/yaroslavros/wireshark-echkeylog/assets/27410961/69b8345b-79f7-4f08-9987-72339a8e3b3a)
+![unnamed](https://github.com/yaroslavros/wireshark-echkeylog/assets/27410961/0cc146a4-1c22-4bc1-b858-753ccd2c5038)
+
+
+
 General Information
 -------------------
 
