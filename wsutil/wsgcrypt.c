@@ -284,7 +284,7 @@ void
 hpke_suite_id(uint16_t kem_id, uint16_t kdf_id, uint16_t aead_id, uint8_t *suite_id)
 {
     uint8_t offset = 0;
-    strncpy(suite_id, HPKE_SUIT_PREFIX, sizeof(HPKE_SUIT_PREFIX) - 1);
+    memcpy(suite_id, HPKE_SUIT_PREFIX, sizeof(HPKE_SUIT_PREFIX) - 1);
     offset += sizeof(HPKE_SUIT_PREFIX) - 1;
     suite_id[offset++] = (kem_id >> 8) & 0xFF;
     suite_id[offset++] = kem_id & 0xFF;
